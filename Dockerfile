@@ -23,6 +23,8 @@ RUN mkdir /jre/osx
 RUN curl -Lso /tmp/jbrx-osx.tar.gz https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbrx-$jbrx_version-osx-x64-$jbrx_build.tar.gz
 RUN tar -C /jre/osx -xf /tmp/jbrx-osx.tar.gz
 
+RUN chmod -R a+r /jre
+
 RUN groupadd -r mps && useradd --no-log-init -r -g mps mps
 USER mps:mps
 WORKDIR /home/mps
