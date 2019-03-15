@@ -9,6 +9,7 @@ ARG jbrx_build=b1483.31
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends curl ca-certificates unzip ant
+RUN apt-get install -y --no-install-recommends genisoimage
 
 RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_version.$mps_minor_version.zip
 RUN unzip -q /tmp/mps.zip -d /tmp
