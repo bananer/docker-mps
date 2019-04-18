@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:latest
+FROM openjdk:8
 
 LABEL maintainer="mail@philipfrank.de"
 
@@ -8,8 +8,7 @@ ARG jbrx_version=8u202
 ARG jbrx_build=b1483.31
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
-RUN apt-get install -y --no-install-recommends curl ca-certificates unzip ant
-RUN apt-get install -y --no-install-recommends genisoimage
+RUN apt-get install -y --no-install-recommends ant genisoimage
 
 RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_version.$mps_minor_version.zip
 RUN unzip -q /tmp/mps.zip -d /tmp
