@@ -2,15 +2,15 @@ FROM openjdk:8
 
 LABEL maintainer="mail@philipfrank.de"
 
-ARG mps_version=2018.3
-ARG mps_minor_version=4
+ARG mps_version=2019.1
+ARG mps_minor_version
 ARG jbrx_version=8u202
-ARG jbrx_build=b1483.31
+ARG jbrx_build=b1483.37
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends ant genisoimage
 
-RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_version.$mps_minor_version.zip
+RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_version$mps_minor_version.zip
 RUN unzip -q /tmp/mps.zip -d /tmp
 RUN mv "/tmp/MPS $mps_version" /mps
 
