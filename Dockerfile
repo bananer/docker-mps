@@ -3,7 +3,7 @@ FROM openjdk:8
 LABEL maintainer="mail@philipfrank.de"
 
 ARG mps_version=2019.1
-ARG mps_minor_version=.1
+ARG mps_minor_version=.2
 ARG jbrx_version=8u202
 ARG jbrx_build=b1483.37
 
