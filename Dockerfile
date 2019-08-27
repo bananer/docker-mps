@@ -2,10 +2,10 @@ FROM openjdk:8
 
 LABEL maintainer="mail@philipfrank.de"
 
-ARG mps_version=2019.1
-ARG mps_minor_version
-ARG jbrx_version=8u202
-ARG jbrx_build=b1483.37
+ARG mps_version=2019.2
+ARG mps_minor_version=
+ARG jbr_version=11_0_3
+ARG jbr_build=b304.46
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends ant genisoimage
@@ -16,12 +16,12 @@ RUN mv "/tmp/MPS $mps_version" /mps
 
 RUN mkdir /jre
 RUN mkdir /jre/win
-RUN curl -Lso /tmp/jbrx-win.tar.gz https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbrx-$jbrx_version-windows-x64-$jbrx_build.tar.gz
-RUN tar -C /jre/win -xf /tmp/jbrx-win.tar.gz
+RUN curl -Lso /tmp/jbr-win.tar.gz https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbr-$jbr_version-windows-x64-$jbr_build.tar.gz
+RUN tar -C /jre/win -xf /tmp/jbr-win.tar.gz
 
 RUN mkdir /jre/osx
-RUN curl -Lso /tmp/jbrx-osx.tar.gz https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbrx-$jbrx_version-osx-x64-$jbrx_build.tar.gz
-RUN tar -C /jre/osx -xf /tmp/jbrx-osx.tar.gz
+RUN curl -Lso /tmp/jbr-osx.tar.gz https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbr-$jbr_version-osx-x64-$jbr_build.tar.gz
+RUN tar -C /jre/osx -xf /tmp/jbr-osx.tar.gz
 
 RUN chmod -R a+r /jre
 
