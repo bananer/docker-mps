@@ -3,14 +3,14 @@ FROM openjdk:11
 LABEL maintainer="mail@philipfrank.de"
 
 ARG mps_version=2019.2
-ARG mps_minor_version=
+ARG mps_release=2019.2.1
 ARG jbr_version=11_0_3
 ARG jbr_build=b304.46
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends ant genisoimage
 
-RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_version$mps_minor_version.zip
+RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_release.zip
 RUN unzip -q /tmp/mps.zip -d /tmp
 RUN mv "/tmp/MPS $mps_version" /mps
 
