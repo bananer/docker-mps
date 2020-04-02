@@ -3,12 +3,13 @@ FROM openjdk:11
 LABEL maintainer="mail@philipfrank.de"
 
 ARG mps_version=2019.3
-ARG mps_release=2019.3.2
-ARG jbr_version=11_0_5
-ARG jbr_build=b520.34
+ARG mps_release=2019.3.4
+ARG jbr_version=11_0_6
+ARG jbr_build=b520.56
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
-RUN apt-get install -y --no-install-recommends ant genisoimage msitools
+
+RUN apt-get install -y --no-install-recommends ant genisoimage wixl
 
 RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_release.zip
 RUN unzip -q /tmp/mps.zip -d /tmp
