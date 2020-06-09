@@ -14,6 +14,7 @@ RUN apt-get install -y --no-install-recommends ant genisoimage wixl
 RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_release.zip
 RUN unzip -q /tmp/mps.zip -d /tmp
 RUN mv "/tmp/MPS $mps_version" /mps
+RUN rm /tmp/mps.zip
 
 RUN mkdir /jre
 RUN mkdir /jre/win
