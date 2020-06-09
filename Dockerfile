@@ -18,10 +18,12 @@ RUN rm /tmp/mps.zip
 
 RUN mkdir /jre
 RUN mkdir /jre/win
-RUN wget https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-windows-x64-$jbr_build.tar.gz -O - | tar xz --no-same-permissions -C /jre/win
+RUN wget -q -O - https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-windows-x64-$jbr_build.tar.gz | tar xz -C /jre/win
 
 RUN mkdir /jre/osx
-RUN wget https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-osx-x64-$jbr_build.tar.gz -O - | tar xz --no-same-permissions -C /jre/osx
+RUN wget -q -O - https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-osx-x64-$jbr_build.tar.gz | tar xz -C /jre/osx
+
+RUN chmod -R a+rX /jre
 
 RUN groupadd -r mps && useradd --no-log-init -r -g mps mps
 USER mps:mps
