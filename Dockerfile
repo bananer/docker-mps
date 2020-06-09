@@ -18,11 +18,11 @@ RUN mv "/tmp/MPS $mps_version" /mps
 RUN mkdir /jre
 RUN mkdir /jre/win
 RUN curl -Lso /tmp/jbr-win.tar.gz https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-windows-x64-$jbr_build.tar.gz
-RUN tar -C /jre/win -xf /tmp/jbr-win.tar.gz
+RUN tar --no-same-permissions -C /jre/win -xf /tmp/jbr-win.tar.gz
 
 RUN mkdir /jre/osx
 RUN curl -Lso /tmp/jbr-osx.tar.gz https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-osx-x64-$jbr_build.tar.gz
-RUN tar -C /jre/osx -xf /tmp/jbr-osx.tar.gz
+RUN tar --no-same-permissions -C /jre/osx -xf /tmp/jbr-osx.tar.gz
 
 RUN chmod -R a+r /jre
 
