@@ -18,13 +18,11 @@ RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$
     && chmod -R a+rX /mps
 
 RUN mkdir -p /jre/win \
-    && set -o pipefail \
     && wget -q -O - https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-windows-x64-$jbr_build.tar.gz \
     | tar xz -C /jre/win \
     && chmod -R a+rX /jre/win
 
 RUN mkdir -p /jre/osx \
-    && set -o pipefail \
     && wget -q -O - https://bintray.com/jetbrains/intellij-jbr/download_file?file_path=jbr-$jbr_version-osx-x64-$jbr_build.tar.gz \
     | tar xz -C /jre/osx \
     && chmod -R a+rX /jre/osx
