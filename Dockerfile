@@ -2,10 +2,10 @@ FROM openjdk:11
 
 LABEL maintainer="mail@philipfrank.de"
 
-ARG mps_version=2020.1
-ARG mps_release=2020.1.4
+ARG mps_version=2020.2
+ARG mps_release=2020.2
 ARG jbr_version=11_0_7
-ARG jbr_build=b765.65
+ARG jbr_build=b944.20
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y
 
