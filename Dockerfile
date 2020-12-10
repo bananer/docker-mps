@@ -7,9 +7,9 @@ ARG mps_release=2020.2.2
 ARG jbr_version=11_0_9
 ARG jbr_build=b944.49
 
-RUN apt-get clean && apt-get update && apt-get upgrade -y
-
-RUN apt-get install -y --no-install-recommends ant genisoimage wixl
+RUN apt-get clean && apt-get update && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends ant genisoimage wixl \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_release.zip \
     && unzip -q /tmp/mps.zip -d /tmp \
