@@ -2,10 +2,10 @@ FROM openjdk:11
 
 LABEL maintainer="mail@philipfrank.de"
 
-ARG mps_version=2020.2
-ARG mps_release=2020.2.3
+ARG mps_version=2020.3
+ARG mps_release=2020.3
 ARG jbr_version=11_0_9
-ARG jbr_build=b944.49
+ARG jbr_build=b1145.21
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ant genisoimage wixl \
