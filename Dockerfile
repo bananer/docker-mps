@@ -4,7 +4,7 @@ LABEL maintainer="mail@philipfrank.de"
 
 ARG mps_version=2020.3
 ARG mps_release=2020.3.1
-ARG jbr_version=11_0_9
+ARG jbr_version=11_0_9_1
 ARG jbr_build=b1145.77
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y \
