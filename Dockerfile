@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-LABEL maintainer="mail@philipfrank.de"
+LABEL maintainer="philip@nagler.world"
 
 ARG mps_version=2021.1
 ARG mps_release=2021.1
