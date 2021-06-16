@@ -14,7 +14,7 @@ jobs:
       - name: Log in to GitHub Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: docker.pkg.github.com
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract branch name
@@ -27,13 +27,13 @@ jobs:
         with:
           push: true
           tags: |
-            docker.pkg.github.com/${{ github.repository }}/mps:${{ github.sha }}
-            docker.pkg.github.com/${{ github.repository }}/mps:latest
+            ghcr.io/${{ github.actor }}/mps:${{ github.sha }}
+            ghcr.io/${{ github.actor }}/mps:latest
       - name: Build and publish container image (branch version)
         if: ${{ github.ref != 'refs/heads/master' }}
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: |
-            docker.pkg.github.com/${{ github.repository }}/mps:${{ github.sha }}
-            docker.pkg.github.com/${{ github.repository }}/mps:${{ steps.extract_branch.outputs.branch }}
+            ghcr.io/${{ github.actor }}/mps:${{ github.sha }}
+            ghcr.io/${{ github.actor }}/mps:${{ steps.extract_branch.outputs.branch }}
