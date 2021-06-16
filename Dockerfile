@@ -3,9 +3,9 @@ FROM openjdk:11
 LABEL maintainer="philip@nagler.world"
 
 ARG mps_version=2021.1
-ARG mps_release=2021.1
-ARG jbr_version=11_0_10
-ARG jbr_build=b1341.41
+ARG mps_release=2021.1.1
+ARG jbr_version=11_0_11
+ARG jbr_build=b1341.57
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ant genisoimage wixl \
