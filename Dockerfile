@@ -2,8 +2,8 @@ FROM openjdk:11
 
 LABEL maintainer="philip@nagler.world"
 
-ARG mps_version=2021.1
-ARG mps_release=2021.1.1
+ARG mps_version=2021.3
+ARG mps_release=2021.3
 ARG jbr_version=11_0_11
 ARG jbr_build=b1341.57
 
