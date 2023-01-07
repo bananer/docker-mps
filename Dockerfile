@@ -8,7 +8,7 @@ ARG jbr_version=17.0.3
 ARG jbr_build=b469.32 
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends ant genisoimage wixl \
+    && apt-get install -y --no-install-recommends ant genisoimage wixl unzip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/$mps_version/MPS-$mps_release.zip \
