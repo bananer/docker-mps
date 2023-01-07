@@ -28,6 +28,6 @@ RUN mkdir -p /jre/osx \
     && chmod -R a+rX /jre/osx
 
 RUN groupadd -r mps && useradd --no-log-init -r -g mps mps
-RUN mkdir -R /mps/system/log && chown mps:mps /mps/system/log
+RUN mkdir -p /mps/system/log && chown mps:mps /mps/system/log
 USER mps:mps
 WORKDIR /home/mps
