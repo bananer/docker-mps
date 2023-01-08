@@ -1,6 +1,8 @@
 #!/bin/bash
 assert_file() {
-    if [ ! -f $1 ]; then
+    if [ -f $1 ]; then
+        echo "OK: $1"
+    else
         echo "Missing file: $1"
         exit 1;
     fi
