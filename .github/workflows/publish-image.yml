@@ -30,7 +30,7 @@ jobs:
           load: true
           tags: ${{ env.DOCKER_TAG }}
       - name: Test
-        run: docker run --rm --volume ${{ env.GITHUB_WORKSPACE }}/verify.sh:/tmp/verify.sh:ro ${{ env.DOCKER_TAG }} /tmp/verify.sh
+        run: docker run --rm --volume ${{ github.workspace }}/verify.sh:/tmp/verify.sh:ro ${{ env.DOCKER_TAG }} /tmp/verify.sh
       - name: Push (master as latest)
         if: ${{ github.ref == 'refs/heads/master' }}
         uses: docker/build-push-action@v3
