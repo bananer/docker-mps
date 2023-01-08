@@ -19,5 +19,5 @@ assert_file "/mps/plugins/mps-core/lib/mps-core.jar"
 assert_file "/jre/osx/jbr/Contents/Home/bin/java"
 assert_file "/jre/osx/jbr/Contents/Home/bin/javac"
 
-assert_file "/jre/win/jbr/bin/java"
-assert_file "/jre/win/jbr/bin/javac"
+assert_file "/jre/win/jbr/bin/java.exe"
+assert_file "/jre/win/jbr/bin/javac.exe"
