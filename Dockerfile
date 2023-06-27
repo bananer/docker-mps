@@ -21,13 +21,13 @@ RUN curl -Lso /tmp/mps.zip https://download.jetbrains.com/mps/${mps_version}/MPS
 RUN mkdir -p /jre/win \
     && wget -q -O - https://cache-redirector.jetbrains.com/intellij-jbr/jbr_jcef-${jbr_version}-windows-x64-${jbr_build_full}.tar.gz \
     | tar xz --directory /jre/win --no-same-owner --no-same-permissions \
-    && ln -s /jre/win/jbr_jcef-${jbr_version}-x64-${jbr_build} /jre/win/jbr_jcef-${jbr_version}-windows-x64-${jbr_build_full} \
+    && ln -s /jre/win/jbr_jcef-${jbr_version}-windows-x64-${jbr_build} /jre/win/jbr \
     && chmod -R a+rX /jre/win
 
 RUN mkdir -p /jre/osx \
     && wget -q -O - https://cache-redirector.jetbrains.com/intellij-jbr/jbr_jcef-${jbr_version}-osx-x64-${jbr_build_full}.tar.gz \
     | tar xz --directory /jre/osx --no-same-owner --no-same-permissions \
-    && ln -s /jre/osx/jbr_jcef-${jbr_version}-x64-${jbr_build} /jre/osx/jbr_jcef-${jbr_version}-osx-x64-${jbr_build_full} \
+    && ln -s /jre/osx/jbr_jcef-${jbr_version}-osx-x64-${jbr_build} /jre/osx/jbr \
     && chmod -R a+rX /jre/osx
 
 RUN groupadd -r mps && useradd --no-log-init -r -g mps mps
