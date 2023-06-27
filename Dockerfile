@@ -5,7 +5,7 @@ LABEL maintainer="philip@nagler.world"
 ARG mps_version=2022.3
 ARG mps_release=2022.3
 ARG jbr_version=17.0.6
-ARG jbr_build=b653.34
+ARG jbr_build=b653
 ARG jbr_build_full=${jbr_build}.34
 
 RUN apt-get clean && apt-get update && apt-get upgrade -y \
